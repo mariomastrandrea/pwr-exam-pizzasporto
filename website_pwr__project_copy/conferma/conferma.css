@@ -1,0 +1,285 @@
+
+/* h1, h2, h3, subtitle */
+
+div.main-container h1 img.inline {
+   height: 1.3em;
+   top: 0.3em;
+   margin-left: 0.1rem;
+}
+
+div.main-container h1 {
+   padding-bottom: 0.5rem;
+}
+
+div.main-container h2 {
+   font-size: 1.35rem;
+}
+
+div.main-container h3 {
+   display: block;
+   text-align: center;
+   font-size: 1.65rem;
+   font-weight: 600;
+   margin: 3rem auto 0;
+   padding: 0;
+   border: 0;
+}
+
+p.notice {
+   display: block;
+   margin: 0 auto 0.7rem;
+   padding: 0;
+   border: 0;
+   text-align: center;
+   font-style: italic;
+   font-size: 0.9rem;
+}
+
+/* errors */
+
+ul.error-list {
+   padding: 0.75rem 1rem 0.75rem 1.25rem;
+   margin: 0;
+   line-height: 1.3;
+}
+
+ul.error-list li {
+   padding-top: 0.2rem;
+   padding-bottom: 0.2rem;
+}
+
+/* box */
+
+.main-container .main-box {
+   width: fit-content;
+   width: -moz-fit-content; /* Mozilla Firefox non supporta l'attributo 'fit-content', ma solo quello proprietario '-moz-fit-content' */
+}
+
+.main-box.error-wrapper .buttons-row {
+   justify-content: center;
+}
+
+#delivery-info-box {
+   margin: 0.9rem auto 0.8rem;
+}
+
+#delivery-info-box form {
+   margin: 0 0 0.3rem;
+}
+
+/* order recap table */
+
+#order-recap-table {
+   border-collapse: collapse;
+   caption-side: top;
+   margin: 0.3rem 0.3rem;
+   font-size: 1.05em;
+   vertical-align: middle;
+}
+
+#order-recap-table th, #order-recap-table td {
+   padding: 0.55rem 1.1rem;
+}
+
+#order-recap-table td.pizza-qty {
+   text-align: center;
+}
+
+#order-recap-table td.pizza-name {
+   font-weight: 600;
+}
+
+#order-recap-table thead th {
+   border-bottom: 1px solid black;
+   padding-bottom: 0.5rem;
+}
+
+#order-recap-table tfoot td {
+   text-align: left;
+   font-weight: bold;
+}
+
+#order-recap-table thead th:nth-child(3),
+#order-recap-table tbody td:nth-child(3),
+#order-recap-table tfoot th {
+   border-right: 1px solid black;
+   padding-right: 1.3rem;
+}
+
+#order-recap-table thead th:nth-child(4),
+#order-recap-table tbody td:nth-child(4),
+#order-recap-table tfoot td {
+   padding-left: 1.3rem;
+}
+
+#order-recap-table tbody tr:first-child td {
+   padding-top: 0.7rem;
+}
+
+#order-recap-table tbody tr:last-child td {
+   border-bottom: 1px solid black;
+   padding-bottom: 0.8rem;
+}
+
+#order-recap-table thead th {
+   padding-top: 0.4rem;
+}
+
+#order-recap-table tfoot tr > * {
+   padding-bottom: 0.4rem;
+}
+
+#order-recap-table caption {
+   margin-bottom: 0.25rem;
+   font-style: italic;
+   font-weight: normal;
+   text-align: left;
+   text-indent: 0.75rem;
+   font-size: 0.95em;
+}
+
+p.money-info {
+   text-align: center;
+   margin: 1.3rem auto 0;
+}
+
+/* input fields */
+
+#delivery-info-input-flex-row {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: flex-start;
+   flex-wrap: wrap;
+   padding: 0;
+   margin: 0;
+   border: 0;
+}
+
+#delivery-info-input-flex-row > * {
+   margin: 0.15rem 0.6rem;
+}
+
+.input-box {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 0;
+   border: 0;
+}
+
+.input-box > * {
+   margin: 0.15rem 0;
+}
+
+.input-box > label {
+   text-indent: 0.8rem;
+   font-size: 0.9em;
+   align-self: flex-start;
+}
+
+#deliveryHour-input-box > label {
+   text-align: center;
+   align-self: center;
+   text-indent: 0.5rem;
+}
+
+#delivery-info-box input[type="text"], #delivery-info-box input[type="time"] {
+   text-align: left;
+   width: 12.5rem;
+   box-shadow: 0.1rem 0.1rem 0.1rem 0 #0002;
+}
+
+#delivery-info-box #deliveryAddress, #delivery-info-box #deliveryAddress-input-error-box {
+   width: 17rem;
+}
+
+#delivery-info-box #deliveryHour {
+   width: 7rem;
+   text-align: center;
+   padding-left: 0.9rem;
+   justify-content: center;   /* utile per centrare il contenuto del testo in safari */
+   display: flex; /* in order to use 'justify-content' */
+}
+
+/* input errors */
+
+.input-error-box {
+   color: var(--yellow-error);
+   font-size: 0.75rem;
+   text-align: center;
+   width: 12.5rem;
+   min-height: 2.3em;
+   padding: 0;
+   border: 0;
+}
+
+#delivery-info-box #deliveryHour-input-error-box {
+   width: 13rem;
+}
+
+/* buttons & errors row */
+
+.buttons-row {
+   justify-content: flex-start;
+   margin-top: 0.2rem;
+   margin-bottom: 0.2rem;
+}
+
+#delivery-info-box .buttons-errors-row {
+   display: flex;
+   flex-direction: row;
+   justify-content: stretch;
+   align-items: center;
+   flex-wrap: nowrap;
+   width: 100%;
+   margin-top: 0.2rem;
+}
+
+.buttons-errors-row > * {
+   margin-left: 1rem;
+   margin-right: 0;
+}
+
+#error-messages-box {
+   color: var(--yellow-error);
+   font-size: 0.75em;
+   margin-top: 0.3rem;
+   margin-bottom: 0.25rem;
+   max-width: 18rem;
+}
+
+/* media queries */
+
+@media only screen and (max-width: 700px) {
+   html {
+      font-size: 2.8vw;
+   }
+
+   #order-recap-box {
+      padding: 1.5rem 1.6rem;
+   }
+
+   #delivery-info-box {
+      width: 25rem;
+   }
+
+   #order-recap-table th, #order-recap-table td {
+      padding: 0.65rem 1.3rem;
+   }
+
+   #delivery-info-box .buttons-errors-row {
+      flex-wrap: wrap;
+      justify-content: center;
+   }
+
+   #delivery-info-box .buttons-errors-row > * {
+      margin-left: 0;
+   }
+
+   #delivery-info-box #error-messages-box  {
+      margin-top: 0.7rem;
+      text-align: center;
+   }
+}

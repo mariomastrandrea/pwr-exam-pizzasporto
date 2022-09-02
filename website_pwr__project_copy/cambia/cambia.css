@@ -1,0 +1,416 @@
+
+/* h1, h2, h3 */
+
+div.main-container h1 img.inline {
+   height: 1.3em;
+   top: 0.3em;
+   margin-left: 0.1rem;
+}
+
+div.main-container h1 {
+   padding-bottom: 0.5rem;
+}
+
+div.main-container h2 {
+   font-size: 1.35rem;
+}
+
+div.main-container h3 {
+   display: block;
+   text-align: center;
+   font-size: 1.65rem;
+   font-weight: 600;
+   margin: 2.75rem auto 0;
+   padding: 0;
+   border: 0;
+}
+
+#operation-success-box h3 {
+   margin: 0.4rem auto 1rem;
+}
+
+#operation-success-box h3 img.inline {
+   top: 0.3em;
+   margin-left: 0.2rem;
+}
+
+/* box */
+
+div.main-container .main-box {
+   margin-top: 1.1rem;
+   padding: 1.6rem 2.8rem;
+   width: fit-content;
+   width: -moz-fit-content; /* Mozilla Firefox non supporta l'attributo 'fit-content', ma solo quello proprietario '-moz-fit-content' */
+}
+
+#update-pizza-qty-box {
+   padding-bottom: 3.6rem;
+}
+
+#operation-success-box {
+   margin-top: 4rem;
+   padding-bottom: 1.6rem;
+}
+
+/* menu pizzas table */
+
+#menu-pizzas-table {
+   border-collapse: collapse;
+   margin: 0.2rem auto 0;
+   font-size: 0.95em;
+   position: relative;
+}
+
+#update-pizza-qty-form {
+   margin: 0 auto;
+   padding: 0;
+   border: 0;
+   position: relative; /* al fine di posizionare l'elemento #general-error-messages-box */
+}
+
+#menu-pizzas-table th, #menu-pizzas-table td {
+   padding: 0.5rem 1.2rem;
+}
+
+#menu-pizzas-table td.pizza-qty {
+   text-align: center;
+   padding-right: 0.2rem;
+   padding-left: 0.2rem;
+   position: relative;  /* in order to position the corresponding -input-error-box */
+}
+
+#menu-pizzas-table td.pizza-name, #menu-pizzas-table td.pizza-price {
+   font-weight: 600;
+}
+
+#menu-pizzas-table thead th {
+   border-bottom: 1px solid black;
+   padding-bottom: 0.5rem;
+}
+
+#menu-pizzas-table tbody tr:first-child td {
+   padding-top: 0.7rem;
+}
+
+#menu-pizzas-table tbody tr:last-child td {
+   border-bottom: 1px solid black;
+   padding-bottom: 0.8rem;
+}
+
+#menu-pizzas-table caption {
+   margin-top: 0.3rem;
+   font-style: italic;
+   font-weight: normal;
+   text-align: left;
+   text-indent: 1.25rem;
+   position: absolute;
+   bottom: -0.3rem;
+   transform: translateY(100%);
+}
+
+/* input fields */
+
+#menu-pizzas-table input[type="text"] {
+   text-align: center;
+   width: 5rem;
+   margin-left: 1rem;
+   margin-right: 1rem;
+   box-shadow: 0.1rem 0.1rem 0.1rem 0 #0002;
+}
+
+#menu-pizzas-table input[type="text"]:focus {
+   width: 7rem;
+   margin-left: 0;
+   margin-right: 0;
+}
+
+#add-new-pizza-box input[type="text"] {
+   text-align: left;
+   width: 12.5rem;
+   box-shadow: 0.1rem 0.1rem 0.1rem 0 #0002;
+}
+
+#add-new-pizza-box #pizza-price, #add-new-pizza-box #pizza-qty {
+   width: 7rem;
+   text-align: center;
+}
+
+#add-new-pizza-box #pizza-ingredients, #add-new-pizza-box #pizza-ingredients-input-error-box {
+   width: 18rem;
+}
+
+.input-box {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 0;
+   border: 0;
+}
+
+.input-box > * {
+   margin: 0.15rem 0;
+}
+
+.input-box > label {
+   text-indent: 0.8rem;
+   font-size: 0.9em;
+   align-self: flex-start;
+}
+
+/* input errors */
+
+.input-error-box {
+   color: var(--yellow-error);
+   font-size: 0.75rem;
+   text-align: center;
+   width: 12.5rem;
+   min-height: 2.3em;
+   padding: 0;
+   border: 0;
+}
+
+#menu-pizzas-table .input-error-box {
+   min-height: 1em;
+   margin: 0 auto;
+   padding: 0;
+   border: 0;
+   font-size: 0.7rem;
+   position: absolute;
+   transform: translateX(-50%); /* così faccio riferimento al centro orizzontale del box */
+   left: 50%;  /* centro il box rispetto alla cella della tabella */
+   bottom: -0.32rem;  /* lo posiziono appena sotto la cella */
+   /* extend box only horizontally */
+   width: fit-content;
+   width: -moz-fit-content;   /* Mozilla Firefox non supporta l'attributo 'fit-content', ma solo quello proprietario '-moz-fit-content' */
+   white-space: nowrap;
+}
+
+#menu-pizzas-table tr:last-child .input-error-box {
+   bottom: 0rem;  /* lo posiziono appena sotto la cella */
+}
+
+/* errors */
+
+ul.error-list {
+   padding: 0.75rem 1rem 1.25rem 1.5rem;
+   margin: 0 auto;
+   max-width: 40rem;
+}
+
+ul.error-list li {
+   padding-top: 0.2rem;
+   padding-bottom: 0.2rem;
+}
+
+p.error-message {
+   margin-top: 2.5rem;
+   margin-bottom: 0;
+}
+
+.error-messages-box {
+   text-align: center;
+   margin: 0 auto;
+   max-width: 35rem;
+}
+
+#general-error-messages-box {
+   color: var(--yellow-error);
+   font-size: 0.8em;
+   padding-left: 8rem;
+   position: absolute;
+   min-height: 2em;
+   max-width: 33rem;
+   text-align: center;
+   bottom: -0.5rem;
+   left: 0;
+   transform: translateY(100%);  /* così da riferirmi alla cima del box */
+}
+
+#add-new-pizza-box .buttons-errors-row {
+   display: flex;
+   flex-direction: row;
+   justify-content: stretch;
+   align-items: center;
+   flex-wrap: nowrap;
+   width: 100%;
+   margin-top: 0.3rem;
+   margin-bottom: 0.7rem;
+}
+
+.buttons-errors-row > * {
+   margin-left: 1rem;
+   margin-right: 0;
+}
+
+#error-messages-box {
+   color: var(--yellow-error);
+   font-size: 0.8em;
+   margin-top: 0.3rem;
+   margin-bottom: 0.25rem;
+   max-width: 25rem;
+}
+
+/* add new pizza box grid */
+
+#pizza-name-input-box {
+   grid-area: name;
+}
+
+#pizza-ingredients-input-box {
+   grid-area: ingredients;
+}
+
+#pizza-type-input-box {
+   grid-area: type;
+}
+
+#pizza-price-input-box {
+   grid-area: price;
+}
+
+#pizza-qty-input-box {
+   grid-area: qty;
+}
+
+#pizza-price-input-box > label, #pizza-qty-input-box > label {
+   align-self: center;
+}
+
+#pizza-qty-input-box > label {
+   text-indent: 0;
+}
+
+#buttons-errors-row {
+   grid-area: buttons-errors;
+}
+
+#add-new-pizza-box form {
+   display: grid;
+   grid-template-areas: 
+   'name ingredients ingredients'
+   'type price qty'
+   'buttons-errors buttons-errors buttons-errors';
+   grid-template-columns: 1.2fr 1fr 1fr; 
+   justify-items: center;
+   align-items: start;
+   gap: 0;
+   width: 100%;
+   padding-left: 0.5rem;
+   padding-top: 0.5rem;
+}
+
+/* add new pizza box content */
+
+#pizza-type-input-box {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   font-size: 0.9em;
+}
+
+#pizza-type-input-box > * {
+   margin: 0.3rem 0;
+}
+
+#pizza-type-input-box .radio-choices-box {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   padding: 0;
+}
+
+.radio-choices-box > * {
+   margin: 0 0.35rem;
+}
+
+.radio-choices-box .radio-wrapper {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   padding: 0;
+}
+
+.radio-choices-box .radio-wrapper > * {
+   margin: 0 0.15rem;
+}
+
+/* buttons */
+
+button {
+   white-space: nowrap;
+}
+
+#add-new-pizza-box .buttons-row {
+   justify-content: flex-start;
+   margin-top: 0.2rem;
+   margin-bottom: 0.2rem;
+}
+
+/* new pizza table */
+
+#new-pizza-info-table {
+   margin: 1.75rem auto;
+}
+
+#new-pizza-info-table th, #new-pizza-info-table td {
+   padding: 0.25rem 0.8rem;
+   width: 50%;
+   max-width: 17rem;
+}
+
+#new-pizza-info-table th {
+   text-align: right;
+}
+
+#new-pizza-info-table td {
+   text-align: left;
+}
+
+/* media queries */
+
+@media only screen and (max-width: 800px) {
+   html {
+      font-size: 2.6vw;
+   }
+
+   #update-pizza-qty-box, #add-new-pizza-box {
+      padding: 1.5rem 1.6rem;
+   }
+
+   #update-pizza-qty-box{
+      padding-bottom: 3.6rem;
+   }
+
+   #menu-pizzas-table th, #menu-pizzas-table td {
+      padding: 0.5rem 0.7rem;
+   }
+}
+
+@media only screen and (max-width: 880px) {
+   #add-new-pizza-box form {
+      grid-template-areas: 
+      'name ingredients'
+      'type type'
+      'price qty'
+      'buttons-errors buttons-errors';
+      grid-template-columns: 1fr 1.2fr;
+      padding-left: 0;
+   }
+
+   #add-new-pizza-box #pizza-ingredients, #add-new-pizza-box #pizza-ingredients-input-error-box {
+      width: 16rem;
+   }
+
+   #add-new-pizza-box #pizza-name, #add-new-pizza-box #pizza-name-input-error-box {
+      width: 10rem;
+   }
+
+   #error-messages-box {
+      max-width: 14rem;
+   }
+}
+

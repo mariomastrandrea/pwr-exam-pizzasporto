@@ -1,0 +1,126 @@
+
+h1 img.inline {
+   height: 1.2em;
+}
+
+p.correct-login {
+   margin: 1rem 1.25rem 1.5rem;
+   font-style: italic;
+}
+
+div.main-container h1 {
+   padding-bottom: 0.5rem;
+} 
+
+/* box */
+
+#sign-in-box, #login-check-output-box {
+   width: fit-content;
+   width: -moz-fit-content; /* Mozilla Firefox non supporta l'attributo 'fit-content', ma solo quello proprietario '-moz-fit-content' */
+   padding: 0.9rem 1.5rem 1.4rem;
+   max-width: 80%;
+}
+
+#sign-in-box {
+   margin-top: 3rem;
+}
+
+#sign-in-form {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+#sign-in-form > * {
+   margin: 0.25rem 0;
+}
+
+#user-info-box {
+   padding: 0.2rem;
+   border: 0;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+#user-info-box > * {
+   margin: 0.2rem 0;
+}
+
+.input-box {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 0;
+   border: 0;
+}
+
+.input-box > * {
+   margin: 0.15rem 0;
+}
+
+/* errors */
+
+ul.error-list {
+   padding: 0.75rem 1rem 0.75rem 1.25rem;
+   margin: 0;
+}
+
+ul.error-list li {
+   padding-top: 0.2rem;
+   padding-bottom: 0.2rem;
+}
+
+.input-box .input-error-box, #general-error-box {
+   font-size: 0.75em;
+   color: var(--yellow-error);
+   text-align: center;
+   max-width: 10rem;
+}
+
+#general-error-box {
+   margin: 0.5rem auto 0;
+   max-width: 12.5rem;
+}
+
+div.main-container h2 {
+   min-height: 2rem;
+   margin: 0;
+   padding: 0;
+   display: block;
+}
+
+/* labels */
+
+.input-box label {
+   font-size: 0.95em;
+   font-weight: 600;
+}
+
+/* input fields */
+
+input[type="text"], input[type="password"] {
+   text-align: center;
+   width: 10rem;
+   margin-left: 1rem;
+   margin-right: 1rem;
+   box-shadow: 0.1rem 0.1rem 0.1rem 0 #0002;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+   width: 12rem;
+   margin-left: 0;
+   margin-right: 0;
+}
+
+/* buttons row */
+
+#sign-in-form .buttons-row {
+   margin-top: 0.5rem;
+}

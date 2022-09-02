@@ -1,0 +1,228 @@
+h1 img.inline {
+   height: 1.2em;
+}
+
+fieldset {
+   margin: 0.8rem auto;
+   padding: 0.8rem;
+   border: 0.1rem groove gray;
+   border-radius: 1rem;
+   box-shadow: 0.1rem 0.1rem 0.1rem 0 #0002;
+}
+
+fieldset legend {
+   text-align: center;
+   font-style: italic;
+} 
+
+/* input fields */
+
+input[type="text"], input[type="password"] {
+   text-align: left;
+   width: 12.5rem;
+   box-shadow: 0.1rem 0.1rem 0.1rem 0 #0002;
+}
+
+.input-box {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 0;
+   border: 0;
+}
+
+.input-box > * {
+   margin: 0.15rem 0;
+}
+
+.input-box > label {
+   text-indent: 0.8rem;
+   font-size: 0.9em;
+   align-self: flex-start;
+}
+
+#birthdate, #money, #nick, #password {
+   text-align: center;
+}
+
+#money-input-box label {
+   align-self: center;
+}
+
+#money-input-error-box {
+   padding-left: 1.5rem;
+}
+
+#birthdate {
+   width: 9rem;
+}
+
+#birthdate-input-error-box {
+   width: 11rem;
+}
+
+#birthdate-input-box label {
+   text-indent: 1.9rem;
+}
+
+#money {
+   width: 7rem;
+}
+
+#address, #address-input-error-box {
+   width: 16rem;
+}
+
+.input-error-box {
+   color: var(--yellow-error);
+   font-size: 0.75rem;
+   text-align: center;
+   width: 12.5rem;
+   min-height: 2.3em;
+   margin-top: 0;
+}
+
+/* grid layouts */
+
+#name-input-box {
+   grid-area: name;
+}
+
+#surname-input-box {
+   grid-area: surname;
+}
+
+#birthdate-input-box {
+   grid-area: birthdate;
+}
+
+#address-input-box {
+   grid-area: address;
+}
+
+#money-input-box {
+   grid-area: money;
+}
+
+#nick-input-box {
+   grid-area: nick;
+}
+
+#password-input-box {
+   grid-area: password;
+}
+
+#personal-info-grid {
+   display: grid;
+   grid-template-areas:
+   'name      surname'
+   'birthdate address';
+ /* '1fr' è un un unità di misura che indica "una frazione" del totale (ovvero rispetto a totale/n): è utile quindi per suddividere lo spazio con dimensioni relative */
+   grid-template-columns: 1fr 1.3fr;
+   justify-items: center;
+   align-items: start;
+   gap: 0;
+}
+
+#account-data-grid {
+   display: grid;
+   grid-template-areas:
+   'money money'
+   'nick  password';
+   grid-auto-columns: 1fr;
+   justify-items: center;
+   align-items: start;
+   gap: 0;
+}
+
+/* buttons & errors row */
+
+.buttons-row {
+   justify-content: flex-start;
+   margin-top: 0.55rem;
+   margin-bottom: 0.55rem;
+}
+
+#sign-up-box .buttons-errors-row {
+   display: flex;
+   flex-direction: row;
+   justify-content: stretch;
+   align-items: center;
+   flex-wrap: nowrap;
+   width: 100%;
+}
+
+.buttons-errors-row > * {
+   margin-left: 1rem;
+   margin-right: 0;
+}
+
+#error-messages-box {
+   color: var(--yellow-error);
+   font-size: 0.8em;
+   margin-top: 0.3rem;
+   margin-bottom: 0.25rem;
+}
+
+/* landing page */
+
+#landing-page-box .buttons-row {
+   justify-content: center;
+}
+
+.error-messages-box {
+   margin: 1.25rem auto;
+}
+
+address {
+   font-style: normal;
+}
+
+/* new user table */
+
+#new-user-info-table {
+   margin: 1.75rem auto;
+}
+
+#new-user-info-table th, #new-user-info-table td {
+   padding: 0.25rem 0.8rem;
+   width: 50%;
+}
+
+#new-user-info-table th {
+   text-align: right;
+}
+
+#new-user-info-table td {
+   text-align: left;
+}
+
+/* media query */
+
+@media only screen and (max-width: 800px) {
+   #personal-info-grid {
+      grid-template-areas:
+      'name'
+      'surname'
+      'birthdate'
+      'address';
+      grid-template-columns: 1fr;
+   }
+
+   #account-data-grid {
+      grid-template-areas:
+      'money'
+      'nick'
+      'password';
+   }
+
+   .buttons-row {
+      justify-content: center;
+   }
+
+   #sign-up-box .buttons-errors-row {
+      flex-wrap: wrap;
+   }
+}
+

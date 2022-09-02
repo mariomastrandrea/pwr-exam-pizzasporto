@@ -1,0 +1,111 @@
+
+h1 img.inline {
+   height: 1.2em;
+}
+
+/* welcome message */
+
+#welcome-message-box {
+   width: fit-content;
+   width: -moz-fit-content; /* Mozilla Firefox non supporta l'attributo 'fit-content', ma solo quello proprietario '-moz-fit-content' */
+   padding: 0.9rem 1.5rem 1.4rem;
+   max-width: 80%;
+   margin-bottom: 3rem;
+}
+
+#welcome-message-box p {
+   margin: 0.25rem 0.5rem;
+}
+
+#welcome-message-box img.inline, h1 img.inline {
+   top: 0.3em;
+   margin-left: 0.2rem;
+}
+
+/* errors */
+
+ul.error-list {
+   padding: 0.75rem 1rem 0.75rem 1.25rem;
+   margin: 0;
+}
+
+ul.error-list li {
+   padding-top: 0.2rem;
+   padding-bottom: 0.2rem;
+}
+
+/* box */
+
+.main-container .main-box {
+   width: fit-content;
+   width: -moz-fit-content; /* Mozilla Firefox non supporta l'attributo 'fit-content', ma solo quello proprietario '-moz-fit-content' */
+}
+
+#suggestion-box p {
+   margin: 0.5rem 0;
+   line-height: 1.4;
+}
+
+/* menu pizzas table */
+
+#menu-pizzas-table {
+   border-collapse: collapse;
+   caption-side: bottom;
+   margin: 0.2rem 0.4rem 0.5rem;
+   font-size: 0.95em;
+}
+
+#menu-pizzas-table th, #menu-pizzas-table td {
+   padding: 0.4rem 0.6rem;
+}
+
+#menu-pizzas-table td.pizza-type, #menu-pizzas-table td.pizza-qty {
+   text-align: center;
+}
+
+#menu-pizzas-table td.pizza-ingredients, #menu-pizzas-table td.pizza-type {
+   font-style: italic;
+}
+
+#menu-pizzas-table td.pizza-name, #menu-pizzas-table td.pizza-price {
+   font-weight: 600;
+}
+
+#menu-pizzas-table thead th {
+   border-bottom: 1px solid black;
+   padding-bottom: 0.5rem;
+}
+
+#menu-pizzas-table tbody tr:first-child td {
+   padding-top: 0.7rem;
+}
+
+#menu-pizzas-table tbody tr:last-child td {
+   border-bottom: 1px solid black;
+   padding-bottom: 0.8rem;
+}
+
+#menu-pizzas-table caption {
+   margin-top: 0.3rem;
+   font-style: italic;
+   font-weight: normal;
+   text-align: left;
+   text-indent: 1.25rem;
+}
+
+/* media queries */
+
+@media only screen and (max-width: 700px) {
+   html {
+      font-size: 2.5vw;
+   }
+
+   #menu-info-box {
+      padding: 1.5rem 1.6rem;
+   }
+
+   #menu-pizzas-table th, #menu-pizzas-table td {
+      padding: 0.35rem 0.4rem;
+   }
+}
+

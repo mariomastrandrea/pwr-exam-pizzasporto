@@ -1,0 +1,30 @@
+
+#website-info-container {
+   padding-bottom: 1.7rem; 
+}
+
+#website-info-container p {
+   margin: 0.35rem 0;
+}
+#website-info-container img.inline {
+   height: 1.1em;
+   width: auto;
+   position: relative;
+   top: 0.15rem;
+   margin: 0 0.1rem;
+}
+
+#website-info-container ul {
+   padding-left: 1.5rem;
+   padding-right: 1rem;
+}
+
+#website-info-container li {
+   margin: 0.6rem 0;
+   line-height: 1.4;
+   list-style-type: none;
+}
+
+#website-info-container img.li-icon {
+   margin-right: 0.3rem;
+}

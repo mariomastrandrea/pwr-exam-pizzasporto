@@ -1,0 +1,617 @@
+:root {
+   /* variabili css -> utilizzabili con la funzione var(...) */
+   --red-background-color: #f77;
+   --red-header-color: #c01b;
+   --light-red: #fa9;
+   --very-light-red: #fcc;
+   --red-footer-color: #912;
+   --dark-yellow: #fc0;
+   --light-yellow: #fc0b; 
+   --box-background-color: #fff3;
+   --sky-blue: #47e;
+   --dark-red-error: #300;
+   --wood-green: #0b5;
+   --yellow-error: #fe4;
+   --page-name-disabled-red: #c44;
+   /* utilizzo colori cosiddetti 'web smart' per migliorare la portabilità */
+   --footer-height: 8.5rem;
+}
+
+/* general properties */
+
+* {
+   box-sizing: border-box; /* le misure di larghezza e altezza di ciascun elemento sono così riferite al bordo */
+}
+
+html {
+   font-size: 1.2rem;
+}
+
+body {
+   font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+   margin: 0;
+   padding: 0;
+   border: 0;
+   width: 100vw;
+   /* uso la funzione calc() per calcolare l'altezza minima del body, ovvero tutta l'altezza della finestra meno quella 
+      del footer: in questo modo il footer sarà sempre a fondo pagina, qualunque sia il contenuto del body */
+   min-height: calc(100vh - 8.5rem);    
+   background: center center url("images/red_background.png")
+               var(--red-background-color) scroll no-repeat;
+   background-size: cover;
+   /* aggiunta sia un'immagine che un colore per lo sfondo, così da sopperire nell'eventualità di immagine non scaricata correttamente */
+   position: relative;  /* utile a posizionare il footer */
+}
+
+/* big containers */
+
+div.main-container {
+   width: 60rem;
+   max-width: 90%;
+   margin: 0.5rem auto;
+   padding: 0;
+   border: 0;
+}
+
+div.main-container h1 {
+   text-align: center;
+   font-weight: bold;
+   font-size: 2rem;
+   margin: 0.5rem 0;
+   padding: 1rem 0;
+   border: 0;
+}
+
+div.main-container h2 {
+   margin: 0.4rem auto 1rem;
+   text-align: center;
+   font-weight: 600;
+   font-size: 1.7rem;
+}
+
+div.main-container h1 img.inline {
+   top: 0.2rem;
+}
+
+.main-container .main-box {
+   width: 40rem;
+   max-width: 100%;
+   margin: 2rem auto;
+   padding: 1.5rem 2.5rem;
+   border: 0.1rem solid black;
+   border-radius: 1rem;
+   background-color: var(--box-background-color);
+   box-shadow: 0.15rem 0.15rem 0.3rem 0 #0005;  /* per box-shadow, vedi "AAA_info_per_i_docenti.txt", 7)*/
+}
+
+/* header, menu, user info */
+
+header.row-header {
+   display: flex;          /* per Flexbox, vedi "AAA_info_per_i_docenti.txt", 6)*/
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+   width: 100%;
+   min-height: 1rem;
+   margin: 0;
+   padding: 0;
+   border: 0;
+   border-bottom: 0.5px solid var(--light-red);
+   background-color: var(--red-header-color);
+   position: relative;
+   top: 0;
+   left: 0;
+}
+
+nav.menu-flex-row, .user-info-flex-row {
+   display: flex;          /* per Flexbox, vedi "AAA_info_per_i_docenti.txt", 6)*/
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;  /* consente di creare più righe automaticamente, adattando il contenuto alle dimensioni disponibili */
+   margin: 0;
+   padding: 0.4rem 1rem;
+   border: 0;
+}
+
+.user-info-flex-row {
+   max-width: 30%;
+}
+
+/* menu items */
+
+nav.menu-flex-row > .menu-item {
+   margin: 0.40rem 0.70rem;
+   padding: 0.40rem 0.90rem;
+   border: 0;
+   border-radius: 50rem; /* arbitrary high value */
+   font-size: 0.85em;
+   color: var(--very-light-red);
+   font-weight: 600;
+   cursor: pointer;
+   background-color: #0002;
+}
+
+nav.menu-flex-row > .menu-item:not(.disabled):hover, nav.menu-flex-row > a.menu-item.selected:not(.disabled) {
+   margin: 0.25rem 0.30rem;
+   padding: 0.55rem 1.30rem;
+   /* a little 3D effect */
+   box-shadow: 0.15rem 0.15rem 0.1rem 0 #0003;     /* per box-shadow, vedi "AAA_info_per_i_docenti.txt", 7)*/
+}
+
+nav.menu-flex-row > .menu-item:not(.disabled):hover {
+   transition: linear 0.1s;      /* proprietà utile a personalizzare la velocità di transizione da uno stato all'altro di un elemento (che sarebbe altrimenti istantanea) */
+}
+
+nav.menu-flex-row > .menu-item:not(.disabled):hover, nav.menu-flex-row > a.menu-item.selected:hover {
+   background-color: var(--light-yellow);
+   color: #000c;
+   transition: linear 0.1s;
+}
+
+nav.menu-flex-row > .menu-item.selected:not(.disabled) {
+   background-color: var(--dark-yellow);
+   color: black;
+}
+
+nav.menu-flex-row > .menu-item.disabled {
+   color: darkred;
+   background-color: #0001;
+   cursor: not-allowed;
+}
+
+/* website info */
+
+.website-title {
+   display: inline-block;
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 1.1em;
+   font-family: 'Impact', 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+   color: #fee;
+   text-decoration: underline;
+}
+
+.website-title a:hover {
+   color: gold;
+}
+
+/* user info */
+
+img.inline:hover {
+   box-shadow: 0 0 0.4rem 0 #fff4;     /* per box-shadow, vedi "AAA_info_per_i_docenti.txt", 7)*/
+}
+
+.username-box, .money-box {
+   display: flex;       /* per Flexbox, vedi "AAA_info_per_i_docenti.txt", 6) */
+   flex-direction: row;
+   flex-wrap: nowrap;
+   justify-content: center;
+   align-items: center;
+   margin: 0.25rem 0.5rem;
+   padding: 0.3rem 0.7rem;
+   border: 0;
+   border-radius: 50rem; /* arbitrary high value */
+   box-shadow: 0.15rem 0.15rem 0.1rem 0 #0003;     /* per box-shadow, vedi "AAA_info_per_i_docenti.txt", 7)*/
+   background-color: var(--dark-yellow);
+   color: black;
+   white-space: nowrap;
+}
+
+.username-box:hover, .money-box:hover {
+   background-color: var(--light-yellow);
+   color: #000c;
+   transition: linear 0.1s;
+   cursor: default;
+}
+
+.username-box:hover img, .money-box:hover img {
+   opacity: 0.75;
+}
+
+.username-box > *, .money-box > * {
+   margin: 0 0.25rem;
+}
+
+span.username, span.money {
+   font-weight: 600;
+}
+
+/* footer */
+
+.separator {   /* per separare il footer dal contenuto della pagina: impostando il footer con 'position: absolute', non è possibile applicargli un margine che lo distanzi dal resto della pagina soprastante */
+   visibility: hidden;
+   height: 2rem;
+   margin: 0;
+   display: block;
+   padding: 0;
+}
+
+footer.footer-flex-row {
+   display: flex;       /* per Flexbox, vedi "AAA_info_per_i_docenti.txt", 6)*/
+   flex-direction: row;
+   justify-content: center;
+   align-items: stretch;
+   width: 100vw;
+   height: var(--footer-height);
+   margin: 0;
+   padding: 0.5rem;
+   border: 0;
+   border-top: 0.5px solid var(--light-red);
+   background-color: var(--red-footer-color);
+   position: absolute;  /* relative to <body> */
+   left: 0;
+   bottom: 0;
+   transform: translateY(100%);  /* traslo il footer verso il basso di una qta pari alla sua intera (100%) altezza , così da posizionarlo in riferimento al suo bordo superiore */
+}
+
+footer .footer-content {
+   display: flex;          /* per Flexbox, vedi "AAA_info_per_i_docenti.txt", 6)*/
+   flex-direction: column;
+   justify-content: space-around;
+   align-items: center;
+   margin: 0;
+   padding: 0;
+   padding-top: 1rem;
+   border: 0;
+   font-size: 0.9em;
+   text-align: center;
+   color: var(--very-light-red);
+}
+
+.footer-content .page-info p {
+   margin: 0.2rem 0;
+}
+
+.footer-content .attributions {
+   font-size: 0.7em;
+   color: black;
+}
+
+.footer-content a {
+   text-decoration: underline;
+}
+
+.footer-content .page-description {
+   font-style: italic;
+}
+
+.footer-content .page-name {
+   text-transform: uppercase;
+   font-weight: bold;
+   cursor: pointer;
+   text-decoration: none;
+}
+
+.page-name:hover {
+   text-decoration: underline;
+}
+
+/* input fields */
+
+input[type="text"], input[type="password"], input[type="time"] {
+   font-size: 0.95em;
+   font-family: inherit;
+   padding: 0.4rem 1rem;
+   border: 0.2rem solid var(--sky-blue);
+   border-radius: 50rem;
+   background-color: #fffe;
+   outline: none;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="time"]:focus {
+   background-color: #ffff;
+   border-color: gold;
+   transition: linear 0.1s;
+}
+
+input[type="text"]:focus::placeholder, input[type="password"]:focus::placeholder, input[type="time"]:focus::placeholder {
+   visibility: hidden;
+   transition: linear 0.1s;
+}
+
+input[type="text"].error, input[type="password"].error, input[type="time"].error, select.error {
+   border-color: red;
+   transition: linear 0.1s;
+}
+
+input[type="text"].ok, input[type="password"].ok, input[type="time"].ok {
+   border-color: var(--wood-green);
+   transition: linear 0.1s;
+} 
+
+td.updated > input[type="text"] {
+   border-color: #0a4;
+   transition: linear 0.1s;
+   background-color: #efe;
+}
+
+td.updated::after {
+   content: "\2713";
+   color: var(--wood-green);
+   position: absolute;
+   top: 0;
+   right: 0;
+   transform: translate(-25%, 40%);
+}
+
+/* text */
+
+a {
+   text-decoration: unset;
+   color: inherit;
+}
+
+em {
+   font-style: unset;
+   font-weight: 600;
+   text-decoration: underline;
+}
+
+em.weight {
+   font-style: unset;
+   font-weight: 600;
+   text-decoration: none;
+}
+
+em.oblique {
+   font-style: italic;
+   font-weight: normal;
+   text-decoration: none;
+}
+
+span.field-name {
+   color: var(--dark-yellow);
+   font-weight: 600;
+}
+
+span.manager-name, span.user-name {
+   font-style: italic;
+   color: var(--dark-yellow);
+}
+
+span.no-wrap {
+   white-space: nowrap;
+}
+
+img.inline {
+   height: 1.5em;
+   width: auto;
+   position: relative;
+}
+
+.main-box .page-name {
+   text-decoration: none;
+   margin: 0 0.1rem;
+   padding: 0.2rem 0.6rem;
+   border: 0;
+   border-radius: 50rem; /* arbitrary high value */
+   box-shadow: 0.15rem 0.15rem 0.1rem 0 #0003;     /* per box-shadow, vedi "AAA_info_per_i_docenti.txt", 7)*/
+   background-color: var(--dark-yellow);
+   color: black;
+   font-size: 0.9em;
+}
+
+.main-box .page-name:not(.disabled):hover {
+   background-color: var(--light-yellow);
+   color: #000c;
+   transition: linear 0.1s;
+}
+
+.main-box .page-name.disabled {
+   color: darkred;
+   background-color: var(--page-name-disabled-red);
+   cursor: not-allowed;
+}
+
+/* money wrapper */
+
+.money-wrapper {
+   display: flex;       /* per Flexbox, vedi "AAA_info_per_i_docenti.txt", 6)*/
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: nowrap;
+   white-space: nowrap;
+}
+
+.money-wrapper > * {
+   margin: 0 0.25rem;
+}
+
+/* buttons */
+
+.buttons-row {
+   display: flex;          /* per Flexbox, vedi "AAA_info_per_i_docenti.txt", 6)*/
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   margin: 0.3rem 0;
+   padding: 0;
+   border: 0;
+}
+
+.buttons-row > * {
+   margin: 0 0.5rem;
+}
+
+.buttons-row button, a.button-style, button.button-style {
+   font-family: inherit;
+   font-size: 0.95em;
+   padding: 0.55rem 1.4rem;
+   border: 0;
+   border-radius: 50rem;
+   background-color: var(--sky-blue);
+   color: white;
+   cursor: pointer;
+   box-shadow: 0.1rem 0.1rem 0.1rem 0 #0003;    /* per box-shadow, vedi "AAA_info_per_i_docenti.txt", 7)*/
+}
+
+.buttons-row button:hover, a.button-style:hover, button.button-style:hover {
+   background-color: var(--dark-yellow);
+   transition: 0.1s;
+}
+
+.buttons-row button:active, a.button-style:active, button.button-style:active {
+   box-shadow: 0.1rem 0.1rem 0.1rem 0 #0003 inset;    /* per box-shadow, vedi "AAA_info_per_i_docenti.txt", 7)*/
+   color: whitesmoke;
+}
+
+/* errors */
+
+.error-box {
+   width: 50%;
+   margin: 2rem auto;
+   text-align: center;
+}
+
+.main-box .error-box {
+   width: 100%;
+   margin-top: 1.5rem;
+}
+
+.main-box.error-wrapper {
+   width: 35rem;
+   max-width: 35rem;
+   margin-top: 4rem;
+}
+
+.error-messages-box {
+   color: var(--dark-red-error);
+}
+
+.error-messages-box ul {
+   padding-left: 1rem;
+}
+
+.error-messages-box li {
+   margin: 0.5rem 0;
+}
+
+span.error {
+   color: var(--yellow-error);
+}
+
+span.red-error {
+   color: #c00;
+   font-weight: 600;
+}
+
+/* media query */
+
+/* to adapt to small screens */
+@media only screen and (max-width: 700px) {  /* adatto il contenuto della pagina ad uno schermo pià piccolo utilizzando un font di grandezza variabile in funzione della larghezza dello schermo */
+   html {
+      font-size: 3.3vw;
+   }
+
+   div.main-container h1 {
+      margin: 0 auto;
+      font-size: 1.6rem;
+   }
+}
+
+@media only screen and (max-width: 850px) {  /* modifico la struttura dell' header per schermi piccoli */
+   header.row-header {
+      display: grid;
+      grid-template-areas: 
+      'title user-info'
+      'menu menu';
+      grid-template-columns: 1fr 1.8fr;
+      justify-items: center;
+      align-items: center;
+   }
+
+   header nav {
+      grid-area: menu;
+   }
+
+   header .website-title {
+      grid-area: title;
+   }
+
+   header .user-info-flex-row {
+      grid-area: user-info;
+      flex-wrap: nowrap;
+   }
+
+   .main-box.error-wrapper {
+      width: 27rem;
+      max-width: 27rem;
+   }
+}
+
+/* printer-friendly page */
+/* prediligo nero (o scala di grigi) su sfondo bianco */
+
+@media only print {
+   nav * {
+      display: none; /* tolgo il menù */
+   }
+
+   html {
+      font-size: 8.5pt;
+   }
+
+   body {
+      background: unset;
+      background-color: white;
+      color: black;
+      font-family: Georgia, 'Times New Roman', Times, serif;   /* font di tipo serif per la stampa */
+      margin: 40px;
+      width: auto;
+   }
+
+   header.row-header {
+      border-color: black;
+      background-color: #bbb;
+      width: 100%;
+      margin-top: 3%;
+   }
+
+   footer.footer-flex-row {
+      width: 100%;
+      margin: 0 auto;
+      font-size: 6pt;
+      background-color: #bbb;
+      color: black;
+      padding: 0;
+      border-color: black;
+      position: relative;
+   }
+
+   footer.footer-flex-row > * {
+      color: black;
+   }
+
+   img {
+      display: none; /* tolgo le immagini */
+   }
+
+   /* tolgo i colori e li sostituisco con un grigio */
+
+   .username-box, .money-box, span.page-name, .main-box span.page-name {
+      color: white;
+      background-color: #444;
+      box-shadow: none;
+   }
+
+   .main-box span.page-name.disabled {
+      background-color: black;
+      color: lightgrey;
+   }
+
+   span.website-title, .website-title *, span.manager-name, span.user-name, span.field-name {
+      color: #555;
+   }
+
+   input[type="text"], input[type="password"], input[type="time"] {
+      border-color: #444; 
+   }
+
+   .buttons-row button, a.button-style, button.button-style {
+      background-color: #444;
+      box-shadow: none;
+   }
+}

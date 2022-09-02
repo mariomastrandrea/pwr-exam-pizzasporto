@@ -1,0 +1,13 @@
+To: lioy@polito.it	
+Subj: PWR / richiesta valutazione sito web
+
+Gentile professore,
+mi chiamo Mario Mastrandrea, matricola 256226, e sono uno studente del suo corso di Pwr.
+Le scrivo per comunicarLe la mia sottomissione del sito web da me sviluppato ai fini dell'esame, a completamento della prova scritta da me tenuta(e superata) giorno 25 giugno, nonché per richiederne la Sua valutazione.
+Nell'area cloud a me riservata è presente una sola cartella, chiamata "website_pwr", che contiene tutto il progetto. In particolare, ogni pagina chiamata "x.php" si trova nell'omonima cartella "x", dunque la pagina "home.php" si trova nella sottocartella "home", e così via.
+> Pertanto, il percorso relativo alla pagina "home.php" risulta: "website_pwr/home/home.php". L'url completo è: https://195.231.2.153.nip.io/s256226/website/website_pwr/home/home.php
+Questo è per me l'ultimo esame, per cui conto di laurearmi nella sessione di laurea di settembre. Spero non ci siano problemi tempistici per la correzione del sito entro poche settimane, al fine di ricevere il risultato e laurearmi in tale sessione.
+La ringrazio anticipatamente, le auguro una buona serata.
+Cordiali saluti,
+
+Mario Mastrandrea

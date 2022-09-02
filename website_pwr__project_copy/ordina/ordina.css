@@ -1,0 +1,153 @@
+
+/* h1, h2 */
+
+div.main-container h1 img.inline {
+   height: 1.3em;
+   top: 0.3em;
+   margin-left: 0.1rem;
+}
+
+div.main-container h1 {
+   padding-bottom: 0.5rem;
+}
+
+div.main-container h2 {
+   font-size: 1.35rem;
+}
+
+/* errors */
+
+ul.error-list {
+   padding: 0.75rem 1rem 0.75rem 1.25rem;
+   margin: 0;
+}
+
+ul.error-list li {
+   padding-top: 0.2rem;
+   padding-bottom: 0.2rem;
+}
+
+#error-messages-box {
+   min-height: 1.2em;
+   max-width: 22rem;
+   margin: 0.1rem auto 0.5rem;
+   padding: 0;
+   border:0;
+   text-align: center;
+   color: var(--yellow-error);
+   font-size: 0.75em;
+}
+
+/* box */
+
+.main-container .main-box {
+   width: fit-content;
+   width: -moz-fit-content; /* Mozilla Firefox non supporta l'attributo 'fit-content', ma solo quello proprietario '-moz-fit-content' */
+}
+
+/* menu pizzas table */
+
+#menu-pizzas-table {
+   border-collapse: collapse;
+   caption-side: bottom;
+   margin: 0.2rem 0.4rem 0;
+   font-size: 1.05em;
+   vertical-align: middle;
+}
+
+#menu-pizzas-table th, #menu-pizzas-table td {
+   padding: 0.55rem 1.1rem;
+}
+
+#menu-pizzas-table td.pizza-qty {
+   text-align: center;
+}
+
+#menu-pizzas-table td.pizza-name {
+   font-weight: 600;
+}
+
+#menu-pizzas-table thead th {
+   border-bottom: 1px solid black;
+   padding-bottom: 0.5rem;
+}
+
+#menu-pizzas-table tbody tr:first-child td {
+   padding-top: 0.7rem;
+}
+
+#menu-pizzas-table tbody tr:last-child td {
+   border-bottom: 1px solid black;
+   padding-bottom: 0.8rem;
+}
+
+#menu-pizzas-table caption {
+   margin-top: 0.3rem;
+   font-style: italic;
+   font-weight: normal;
+   text-align: left;
+   text-indent: 1.25rem;
+   font-size: 0.95em;
+}
+
+/* buttons  */
+
+.main-box .buttons-row {
+   margin-bottom: 0.4rem;
+   padding-right: 0.75rem;
+   justify-content: flex-end;
+}
+
+/* select inputs */
+
+td.pizza-qty select {
+   font-family: inherit;
+   font-size: 0.95em;
+   width: 3.5rem;
+   height: 1.6rem;
+   margin: 0;
+   padding: 0;
+   padding-left: 0.3rem;
+   border: 2px solid var(--sky-blue);
+   border-radius: 50rem; /* arbitrary hight value */
+   position: relative;
+   top: -0.05rem;
+}
+
+td.pizza-qty select:focus {
+   border-color: gold;
+}
+
+td.pizza-qty select.error {
+   border-color: red;
+   transition: linear 0.1s;
+}
+
+/* media queries */
+
+@media only screen and (max-width: 700px) {
+   html {
+      font-size: 2.8vw;
+   }
+
+   #order-menu-box {
+      padding: 1.5rem 1.6rem;
+   }
+
+   #menu-pizzas-table th, #menu-pizzas-table td {
+      padding: 0.65rem 1.3rem;
+   }
+
+   #menu-pizzas-table select {
+      width: 3.75rem;
+   }
+}
+
+@media only print {
+   td.pizza-qty select {
+      border-color: #444;
+   }
+}
+
+
+

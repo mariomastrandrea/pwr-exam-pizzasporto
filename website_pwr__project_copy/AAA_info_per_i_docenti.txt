@@ -1,0 +1,71 @@
+      *** AVVERTENZE GENERALI ***
+
+1) Il sito contiene 2 tipologie di commenti: 
+
+   - commenti specifici per la correzione dei docenti (in italiano), per meglio chiarire le scelte fatte
+      sull'utilizzo di alcune funzionalità dei linguaggi, ed individuarne meglio le ragioni;
+      non fanno propriamente parte del progetto, ed è possibile rimuoverli in una successiva release; 
+      sono quelli racchiusi tra '/*' e '*/';
+
+   - commenti generali (in inglese) sul codice, per esplicitare meglio alcuni passaggi;
+      fanno parte del progetto, e sono quelli (solitamente) introdotti dai caratteri '//';
+
+      --- immagini ----
+
+2) Tutte le icone presenti sono tratte dal sito web "https://www.flaticon.com". 
+   Sono completamente gratuite per uso personale, a patto di una breve nota di attribuzione, 
+   presente a tale scopo nel footer di ciascuna pagina
+
+3) Lo sfondo è un'immagine tratta dal sito "https://coolbackgrounds.io", che offre gratuitamente dei tools
+   per generare automaticamente degli sfondi con vari motivi e grafiche.
+
+      --- PHP ---
+
+4) Spesso, per sinteticità, sono utilizzati il 'null coalescing operator', ovvero l'operatore '??', 
+   oppure l' 'elvis operator', ovvero l'operatore '?:'. Il primo è un operatore binario che restituisce 
+   il membro sinistro se questo esiste ed è diverso da 'null', altrimenti restituisce il membro destro.
+   Quindi si equivalgono:   a ?? b  <-->  isset(a) ? a : b 
+   L' 'elvis operator', similmente, è un operatore binario che restituisce il membro sinistro se questo 
+   equivale a 'true', altrimenti restituisce il membro destro.
+   Quindi si equivalgono:  a ?: b  <-->  a ? a : b
+
+5) Si fa largo uso dello 'short echo tag' nell'output html, ovvero la stampa di un valore tramite <?= $var ?>.
+   Tale sintassi è stata riabilitata da PHP 5.4, in maniera del tutto indipendente dallo 'short open tag' (<? ?>),
+   che è invece deprecato. Si equivalgono dunque le scritture: <?= $var ?> e <?php echo $var ?>
+
+      --- CSS ---
+
+6) Laddove possibile e sensato, è stato utilizzato un display di tipo 'flex', che consente di ottenere
+   box monodimensionali dinamici e adattabili al layout, oltre che facilmente orientabili.
+   La proprietà 'flex-direction' indica la direzione del box (riga o colonna), ed individua i due assi
+   ortogonali di riferimento con cui gestire il layout dei suoi componenti: l'asse principale è quello indicato
+   dalla suddetta proprietà, ovvero 'row' -> orizzontale, e 'column' -> verticale; mentre l'asse secondario è 
+   quello ortogonale al primo. 
+   La proprietà 'justify-content' indica la posizione degli elementi lungo l'asse principale; mentre
+   la proprietà 'align-items' indica la posizione lungo l'asse secondario. Dunque le 2 proprietà assumono
+   un ruolo diverso in funzione dell'orientamento del box (riga o colonna).
+
+7) la proprietà css 'box-shadow' consente di ottenere un'ombra sull'elemento: i primi 2 parametri sono gli offset
+   verticale e orizzontale dell'ombra; il 3° e il 4° modulano la diffusione e l'intensità del colore; il 5° è il
+   colore dell'ombra, e l'ultimo (opzionale) può indicare la posizione relativa dell'ombra, ad es. interna o esterna
+
+      --- JavaScript ---
+
+8) Per la costruzione di stringhe in JavaScript è stata preferita l'interpolazione(delimitando la stringa 
+   con `` anziché con "" o '') alla concatenazione, per migliorare sensibilmente la leggibilità del codice;
+   inoltre, essa riconosce una stringa su più righe e consente di inserire agevolmente virgolette(") e apostrofi(').
+   Per inserire una variabile si utilizza la notazione ${var}. Lo stesso risultato si sarebbe ottenuto sostituendo
+   ciascun ${var} con "+ var +", ovvero con una concatenazione classica.
+
+9) La dichiarazione delle variabili in JS con 'let' è stata preferita al classico 'var', poiché con quest'ultima
+   la variabile è 'function scoped', a differenza del 'let' per cui è 'block scoped'; questo approccio
+   garantisce un minor margine di errore, ad es. nella sovrascrittura di variabili pre-esistenti 
+
+10) Avviso su piccole disfunzioni nei form html.
+   Nei form in cui sono presenti controlli in JS, in funzione del comportamento dell'utente sul form, i bottoni
+   'Reset' e 'Submit' potrebbero dover essere premuti 2 volte prima di adempiere correttamente al loro compito.
+   Questo problema è dovuto all'utilizzo dell' event handler 'onchange' per il controllo dell'input nei campi, il
+   quale viene scatenato con priorità rispetto agli eventi di Reset e Submit, quando l'utente clicca sui bottoni
+   prima di abbandonare il campo di testo. Cercando in rete ho scoperto che (molto probabilmente) non esiste
+   ancora una soluzione a questo problema, ovvero per far scatenare il reset o il submit, anziché l' onchange.
+   Ho preferito ormai non stravolgere il codice JS, e accettare l'inconveniente
